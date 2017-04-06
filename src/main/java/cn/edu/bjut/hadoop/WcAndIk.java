@@ -54,14 +54,12 @@ public class WcAndIk {
 			// word.set(itr.nextToken());
 			// context.write(word, one);
 			// }
-			System.out.println(value);
 			byte[] bytes = value.getBytes();
 			InputStream is = new ByteArrayInputStream(bytes);
 			Reader reader = new InputStreamReader(is);
 			IKSegmentation ikSegmentation = new IKSegmentation(reader);
 			Lexeme t = null;
 			while ((t = ikSegmentation.next()) != null) {
-				System.out.println("map分词:" + t.getLexemeText());
 				context.write(new Text(t.getLexemeText()), one);
 			}
 		}
