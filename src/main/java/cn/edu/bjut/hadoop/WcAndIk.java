@@ -54,7 +54,7 @@ public class WcAndIk {
 			// word.set(itr.nextToken());
 			// context.write(word, one);
 			// }
-			byte[] bytes = value.getBytes();
+			byte[] bytes = value.toString().getBytes();
 			InputStream is = new ByteArrayInputStream(bytes);
 			Reader reader = new InputStreamReader(is);
 			IKSegmentation ikSegmentation = new IKSegmentation(reader);
